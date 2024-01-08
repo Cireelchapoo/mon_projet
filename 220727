@@ -1,0 +1,275 @@
+Devoir de PHP
+1.	mavar, $mavar, $var5, $_mavar, $_5var, $__élément1.
+2.	<?php
+3.	$nombre = /* votre nombre à tester */;
+4.	
+5.	if ($nombre % 3 == 0 && $nombre % 5 == 0) {
+6.	    echo "$nombre est un multiple de 3 et de 5.";
+7.	} else {
+8.	    echo "$nombre n'est pas un multiple de 3 et de 5.";
+9.	}
+10.	?>
+Pour la boucle while :
+<?php
+$nombreInitial = 327; // Remplacez cela par le nombre de votre choix
+$tirages = 0;
+
+while (true) {
+    $tirageAleatoire = rand(100, 999);
+    $tirages++;
+
+    if ($tirageAleatoire === $nombreInitial) {
+        break;
+    }
+}
+
+echo "Le nombre initial $nombreInitial a été obtenu en $tirages tirages avec la boucle while.";
+?>
+
+Pour la bouce For :
+<?php
+$nombreInitial = 327; // Remplacez cela par le nombre de votre choix
+$tirages = 0;
+
+for (;;) {
+    $tirageAleatoire = rand(100, 999);
+    $tirages++;
+
+    if ($tirageAleatoire === $nombreInitial) {
+        break;
+    }
+}
+
+echo "Le nombre initial $nombreInitial a été obtenu en $tirages tirages avec la boucle for.";
+?>
+
+<?php
+// Fonction pour calculer le PGCD (Plus Grand Commun Diviseur)
+function pgcd($a, $b) {
+    while ($b != 0) {
+        $temp = $b;
+        $b = $a % $b;
+        $a = $temp;
+    }
+    return $a;
+}
+
+// Fonction pour calculer le PPCM (Plus Petit Commun Multiple)
+function ppcm($a, $b) {
+    return ($a * $b) / pgcd($a, $b);
+}
+
+// Saisie des deux entiers
+echo "Entrez le premier entier : ";
+$entier1 = (int) readline();
+
+echo "Entrez le deuxième entier : ";
+$entier2 = (int) readline();
+
+// Calcul du PPCM et affichage du résultat
+$resultat = ppcm($entier1, $entier2);
+echo "Le PPCM de $entier1 et $entier2 est : $resultat\n";
+
+<?php
+// Saisie du rayon
+echo "Entrez le rayon du cercle : ";
+$rayon = (float) readline();
+
+// Calcul du diamètre, du périmètre et de la surface
+$diametre = 2 * $rayon;
+$perimetre = 2 * M_PI * $rayon; // Utilisation de la constante M_PI pour pi
+$surface = M_PI * pow($rayon, 2);
+
+// Affichage des résultats
+echo "Le diamètre du cercle est : $diametre\n";
+echo "Le périmètre du cercle est : $perimètre\n";
+echo "La surface du cercle est : $surface\n";
+?>
+
+<?php
+// Saisie du nombre
+echo "Entrez un nombre : ";
+$nombre = (int) readline();
+
+// Affichage des diviseurs
+echo "Les diviseurs de $nombre sont : ";
+for ($i = 1; $i <= $nombre; $i++) {
+    if ($nombre % $i === 0) {
+        echo "$i ";
+
+        // Si vous souhaitez afficher uniquement les diviseurs distincts,
+        // vous pouvez ajouter une condition supplémentaire ici.
+    }
+}
+
+// Fin de ligne
+echo "\n";
+?>
+
+<?php
+// Saisie du nombre
+echo "Entrez un nombre : ";
+$nombre = (int) readline();
+
+// Calcul de la somme des diviseurs propres
+$sommeDiviseurs = 0;
+for ($i = 1; $i <= $nombre / 2; $i++) {
+    if ($nombre % $i === 0) {
+        $sommeDiviseurs += $i;
+    }
+}
+
+// Vérification si le nombre est parfait
+if ($sommeDiviseurs === $nombre) {
+    echo "$nombre est un nombre parfait.\n";
+} else {
+    echo "$nombre n'est pas un nombre parfait.\n";
+}
+?>
+
+<?php
+// Saisie du nombre
+echo "Entrez un nombre : ";
+$nombre = (int) readline();
+
+// Calcul de la somme des diviseurs propres
+$sommeDiviseurs = 0;
+for ($i = 1; $i <= $nombre / 2; $i++) {
+    if ($nombre % $i === 0) {
+        $sommeDiviseurs += $i;
+    }
+}
+
+// Vérification si le nombre est parfait
+if ($sommeDiviseurs === $nombre) {
+    echo "$nombre est un nombre parfait.\n";
+} else {
+    echo "$nombre n'est pas un nombre parfait.\n";
+}
+?>
+
+<?php
+$personnes = array(
+    'Alice' => array('prénom' => 'Alice', 'ville' => 'Paris', 'âge' => 25),
+    'Bob' => array('prénom' => 'Bob', 'ville' => 'Lyon', 'âge' => 30),
+    'Charlie' => array('prénom' => 'Charlie', 'ville' => 'Marseille', 'âge' => 22)
+);
+
+// Affichage du tableau multidimensionnel associatif
+foreach ($personnes as $nom => $infos) {
+    echo "Nom : $nom\n";
+    echo "Prénom : " . $infos['prénom'] . "\n";
+    echo "Ville : " . $infos['ville'] . "\n";
+    echo "Âge : " . $infos['âge'] . "\n";
+    echo "--------------------------\n";
+}
+?>
+
+<?php
+$personnes = array(
+    'Alice' => array('prénom' => 'Alice', 'ville' => 'Paris', 'âge' => 25),
+    'Bob' => array('prénom' => 'Bob', 'ville' => 'Lyon', 'âge' => 30),
+    'Charlie' => array('prénom' => 'Charlie', 'ville' => 'Marseille', 'âge' => 22)
+);
+
+// Affichage du tableau multidimensionnel associatif
+foreach ($personnes as $nom => $infos) {
+    echo "Nom : $nom\n";
+    echo "Prénom : " . $infos['prénom'] . "\n";
+    echo "Ville : " . $infos['ville'] . "\n";
+    echo "Âge : " . $infos['âge'] . "\n";
+    echo "--------------------------\n";
+}
+?>
+
+<?php
+// Exercice 8 - Tableau multidimensionnel associatif
+$personnesExercice8 = array(
+    'Alice' => array('prénom' => 'Alice', 'ville' => 'Paris', 'âge' => 25),
+    'Bob' => array('prénom' => 'Bob', 'ville' => 'Lyon', 'âge' => 30),
+    'Charlie' => array('prénom' => 'Charlie', 'ville' => 'Marseille', 'âge' => 22)
+);
+
+echo "Exercice 8 - Utilisation de foreach :\n";
+foreach ($personnesExercice8 as $nom => $infos) {
+    echo "Nom : $nom\n";
+    foreach ($infos as $cle => $valeur) {
+        echo "$cle : $valeur\n";
+    }
+    echo "--------------------------\n";
+}
+
+// Exercice 9 - Tableau multidimensionnel associatif avec tableaux associatifs
+$personnesExercice9 = array(
+    'Alice' => array('prénom' => 'Alice', 'ville' => 'Paris', 'âge' => 25),
+    'Bob' => array('prénom' => 'Bob', 'ville' => 'Lyon', 'âge' => 30),
+    'Charlie' => array('prénom' => 'Charlie', 'ville' => 'Marseille', 'âge' => 22)
+);
+
+echo "Exercice 9 - Utilisation de foreach :\n";
+foreach ($personnesExercice9 as $nom => $infos) {
+    echo "Nom : $nom\n";
+    foreach ($infos as $cle => $valeur) {
+        echo "$cle : $valeur\n";
+    }
+    echo "--------------------------\n";
+}
+?>
+
+<?php
+// Exercice 8 - Tableau multidimensionnel associatif
+$personnesExercice8 = array(
+    'Alice' => array('prénom' => 'Alice', 'ville' => 'Paris', 'âge' => 25),
+    'Bob' => array('prénom' => 'Bob', 'ville' => 'Lyon', 'âge' => 30),
+    'Charlie' => array('prénom' => 'Charlie', 'ville' => 'Marseille', 'âge' => 22)
+);
+
+echo "Exercice 8 - Utilisation de while :\n";
+$keysExercice8 = array_keys($personnesExercice8);
+$i = 0;
+while ($i < count($personnesExercice8)) {
+    $nom = $keysExercice8[$i];
+    echo "Nom : $nom\n";
+
+    $infos = $personnesExercice8[$nom];
+    $keysInfos = array_keys($infos);
+    $j = 0;
+    while ($j < count($infos)) {
+        $cle = $keysInfos[$j];
+        $valeur = $infos[$cle];
+        echo "$cle : $valeur\n";
+        $j++;
+    }
+
+    echo "--------------------------\n";
+    $i++;
+}
+
+// Exercice 9 - Tableau multidimensionnel associatif avec tableaux associatifs
+$personnesExercice9 = array(
+    'Alice' => array('prénom' => 'Alice', 'ville' => 'Paris', 'âge' => 25),
+    'Bob' => array('prénom' => 'Bob', 'ville' => 'Lyon', 'âge' => 30),
+    'Charlie' => array('prénom' => 'Charlie', 'ville' => 'Marseille', 'âge' => 22)
+);
+
+echo "Exercice 9 - Utilisation de while :\n";
+$keysExercice9 = array_keys($personnesExercice9);
+$i = 0;
+while ($i < count($personnesExercice9)) {
+    $nom = $keysExercice9[$i];
+    echo "Nom : $nom\n";
+
+    $infos = $personnesExercice9[$nom];
+    $keysInfos = array_keys($infos);
+    $j = 0;
+    while ($j < count($infos)) {
+        $cle = $keysInfos[$j];
+        $valeur = $infos[$cle];
+        echo "$cle : $valeur\n";
+        $j++;
+    }
+
+    echo "--------------------------\n";
+    $i++;
+}
+?>
